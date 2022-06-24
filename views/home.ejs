@@ -1,19 +1,26 @@
 
-<%- include("partials/header"); -%>
+<%- include("partials/header"); -%>   <!-- focus on how we included these from partials folder, default ejs views me hi dekhta hai, we just need to mention partial-->
+
     <h1>Home</h1>
-    <p> <%= startingContent %> </p>
+    <p> <%= startingContent %> </p>    <!-- display content passed from render -->
 
 
-  <%  posts.forEach(function(post){ %>
+
+
+  <%  posts.forEach(function(post){ %>  <!-- post is element from posts -->
+
 
     <h1><%=post.title%></h1>
+
     <p>
-    <%=post.content.substring(0, 100) + " ..."%>
-    <a href="/posts/<%=post.title%>">Read More</a>
+      <%=post.content.substring(0, 100) + " ..."%>       <!-- display only first 100 chars + "...." -->
+      <a href="/posts/<%=post.title%>">Read More</a>     <!-- Read more will take us to /posts/post-title -->
     </p>
 
 
     <% }) %>
+
+
 
 
 <%- include("partials/footer"); -%>
